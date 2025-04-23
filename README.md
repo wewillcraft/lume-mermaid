@@ -2,6 +2,16 @@
 
 A plugin for [Lume](https://lume.land) to render [Mermaid](https://mermaid.js.org/) diagrams.
 
+## Testing Locally
+
+```bash
+# go to the test project directory
+cd test
+
+# start a local server
+deno task serve
+```
+
 ## Contributing
 
 **Imposter syndrome disclaimer**: We want your help. No, really.
