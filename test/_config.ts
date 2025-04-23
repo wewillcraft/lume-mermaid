@@ -1,5 +1,8 @@
 import lume from "lume/mod.ts";
 import plugin from "plugin/mod.ts";
+import prism from "lume/plugins/prism.ts";
+
+import "npm:prismjs@1.29.0/components/prism-typescript.js";
 
 const site = lume();
 
@@ -14,5 +17,13 @@ site.use(plugin({
     },
   },
 }));
+site.use(
+  prism({
+    theme: {
+      name: "okaidia",
+      cssFile: "/styles.css",
+    },
+  }),
+);
 
 export default site;

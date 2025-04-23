@@ -1,6 +1,68 @@
-# lume-mermaid-plugin
+# lume-mermaid
 
-## Flowchart
+A plugin for [Lume](https://lume.land) to render [Mermaid](https://mermaid.js.org/) diagrams. Check out the source code [here](https://github.com/wewillcraft/lume-mermaid).
+
+## Usage
+
+```ts
+// _config.ts
+import lume from "lume/mod.ts";
+import mermaid from "https://deno.land/x/lume_mermaid@v0.1.0/mod.ts";
+
+const site = lume();
+
+site.use(mermaid({
+  theme: "dark",
+  config: {
+    startOnLoad: true,
+    themeVariables: {
+      primaryColor: "#ff69b4",
+      edgeLabelBackground: "#222",
+      background: "#111",
+    },
+  },
+}));
+
+export default site;
+```
+
+Change the version from `v0.1.0` to the latest version in [https://deno.land/x/lume_mermaid](https://deno.land/x/lume_mermaid).
+
+## Options
+
+```ts
+export interface Options {
+  /**
+   * CSS selector to find mermaid code blocks.
+   * Default: "pre code.language-mermaid"
+   */
+  cssSelector?: string;
+
+  /**
+   * Whether to inject Mermaid.js automatically
+   */
+  injectScript?: boolean;
+
+  /**
+   * Mermaid.js CDN URL
+   */
+  mermaidJsUrl?: string;
+
+  /**
+   * Built-in Mermaid theme: "default" | "dark" | "forest" | "neutral"
+   */
+  theme?: "default" | "dark" | "forest" | "neutral";
+
+  /**
+   * Custom Mermaid config (merged into the default config)
+   */
+  config?: Record<string, unknown>;
+}
+```
+
+## Examples
+
+### Flowchart
 
 ```mermaid
 graph TD;
@@ -10,7 +72,7 @@ graph TD;
   C-->D;
 ```
 
-## Sequence Diagram
+### Sequence Diagram
 
 ```mermaid
 sequenceDiagram
@@ -26,7 +88,7 @@ sequenceDiagram
   Bob-->>John: Jolly good!
 ```
 
-## Class Diagram
+### Class Diagram
 
 ```mermaid
 classDiagram
