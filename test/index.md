@@ -6,8 +6,9 @@ A plugin for [Lume](https://lume.land) to render [Mermaid](https://mermaid.js.or
 
 ```ts
 // _config.ts
+
 import lume from "lume/mod.ts";
-import mermaid from "https://deno.land/x/lume_mermaid@v0.1.0/mod.ts";
+import mermaid from "https://deno.land/x/lume_mermaid@v0.1.3/mod.ts";
 
 const site = lume();
 
@@ -26,7 +27,7 @@ site.use(mermaid({
 export default site;
 ```
 
-Change the version from `v0.1.0` to the latest version in [https://deno.land/x/lume_mermaid](https://deno.land/x/lume_mermaid).
+Change the version from **v0.1.3** to the latest version in [https://deno.land/x/lume_mermaid](https://deno.land/x/lume_mermaid).
 
 ## Options
 
