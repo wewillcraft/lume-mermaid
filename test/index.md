@@ -1,7 +1,3 @@
-# lume-mermaid
-
-A plugin for [Lume](https://lume.land) to render [Mermaid](https://mermaid.js.org/) diagrams. Check out the source code at [wewillcraft/lume-mermaid](https://github.com/wewillcraft/lume-mermaid).
-
 ## Usage
 
 ```ts
@@ -29,7 +25,7 @@ export default site;
 
 Change the version from **v0.1.3** to the latest version in [https://deno.land/x/lume_mermaid](https://deno.land/x/lume_mermaid).
 
-## Options
+### Options
 
 ```ts
 export interface Options {

@@ -3,14 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lume-mermaid</title>
+    <title>{{ title }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <div class="container">
+    <article class="container">
+      <header>
+        <h1>{{ title }}</h1>
+        <p>{{ subtitle |> md }}</p>
+
+        {{ if toc.length }}
+        <nav class="toc">
+          <h3>Table of Contents</h3>
+          <ol>
+            {{ for item of toc }}
+            <li>
+              <a href="#{{ item.slug }}">{{ item.text }}</a>
+
+              {{ if item.children.length }}
+              <ul>
+                {{ for child of item.children }}
+                <li>
+                  <a href="#{{ child.slug }}">{{ child.text }}</a>
+                </li>
+                {{ /for }}
+              </ul>
+              {{ /if }}
+            </li>
+            {{ /for }}
+          </ol>
+        </nav>
+        {{ /if }}
+      </header>
+
       {{ content }}
-    </div>
-    <footer>&copy; <a href="https://willcraft.software">Will Craft Software</a>. All rights reserved.</footer>
+
+      <footer>
+        &copy; {{ footer.year }} &ndash; <a href="{{ footer.link }}" target="_blank">{{ footer.text }}</a>. All rights reserved.
+      </footer>
+    </article>
   </body>
 </html>

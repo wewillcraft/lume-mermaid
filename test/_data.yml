@@ -1,1 +1,7 @@
 layout: layouts/base.vto
+title: lume-mermaid
+subtitle: A plugin for [Lume](https://lume.land) to render [Mermaid](https://mermaid.js.org/) diagrams. Check out the source code at [wewillcraft/lume-mermaid](https://github.com/wewillcraft/lume-mermaid).
+footer:
+  year: 2025
+  text: Will Craft Software
+  link: https://willcraft.software

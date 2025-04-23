@@ -1,15 +1,61 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
 }
 
-code, pre {
-  font-family: 'Fira Code', monospace !important;
+a {
+  color: #4f46e5;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #5d56df;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #4f46e5;
 }
 
 .container {
   max-width: 72rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.toc {
+  margin-top: 1rem;
+  padding: 0.25rem 1rem;
+  border-left: 4px solid #4f46e5;
+  background-color: #f9fafb;
+  font-size: 0.95rem;
+}
+
+.toc ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 0.25rem 0;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
+
+.toc ul {
+  margin-top: 0.25rem;
+  margin-left: 0.25rem;
+  list-style: disc;
+}
+
+code, pre {
+  font-family: 'Fira Code', monospace !important;
 }
 
 footer {
