@@ -50,6 +50,11 @@ export interface Options {
   mermaidJsUrl?: string;
 
   /**
+   * Iconify JSON CDN URL
+   */
+  iconifyJsonUrl?: string;
+
+  /**
    * Built-in Mermaid theme: "default" | "dark" | "forest" | "neutral"
    */
   theme?: "default" | "dark" | "forest" | "neutral";
