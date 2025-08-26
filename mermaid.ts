@@ -20,6 +20,11 @@ export interface Options {
   mermaidJsUrl?: string;
 
   /**
+   * Iconify JSON CDN URL
+   */
+  iconifyJsonUrl?: string;
+
+  /**
    * Built-in Mermaid theme: "default" | "dark" | "forest" | "neutral"
    */
   theme?: "default" | "dark" | "forest" | "neutral";
@@ -35,6 +40,8 @@ export const defaults: Options = {
   injectScript: true,
   mermaidJsUrl:
     "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs",
+  iconifyJsonUrl:
+    "https://cdn.jsdelivr.net/npm/@iconify-json/logos@1/index.mjs",
   theme: "default",
   config: {},
 };
@@ -60,6 +67,8 @@ export default function mermaid(userOptions?: Options) {
           script.setAttribute("type", "module");
           script.textContent = `
             import mermaid from "${options.mermaidJsUrl}";
+            import { icons } from "${options.iconifyJsonUrl}";
+            mermaid.registerIconPacks([{ name: icons.prefix, icons }]);
             mermaid.initialize(${configJson});
           `;
           page.document!.head.appendChild(script);
